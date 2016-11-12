@@ -1,0 +1,13 @@
+//= require bootstrap/js/bootstrap.min.js
+//= require dist/js/app.min.js
+//= require plugins/jQuery/jQuery-2.1.4.min.js
+//= require bootstrap/js/bootstrap.min.js
+//= require plugins/fastclick/fastclick.min.js
+//= require dist/js/app.min.js
+//= require plugins/sparkline/jquery.sparkline.min.js
+//= require plugins/jvectormap/jquery-jvectormap-1.2.2.min.js
+//= require plugins/jvectormap/jquery-jvectormap-world-mill-en.js
+//= require plugins/slimScroll/jquery.slimscroll.min.js
+//= require plugins/chartjs/Chart.min.js
+//= require dist/js/pages/dashboard2.js
+//= require dist/js/demo.js

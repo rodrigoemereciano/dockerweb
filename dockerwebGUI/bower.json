@@ -1,0 +1,25 @@
+{
+  "name": "servers",
+  "authors": [
+    "Rodrigo Emerenciano <rodrigo.emereciano@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "grails-app/assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "~1.0.15",
+    "bootstrap": "~3.3.6",
+    "vue-resource": "~0.6.1",
+    "select2":"*"
+  }
+}

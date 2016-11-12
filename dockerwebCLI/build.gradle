@@ -1,0 +1,58 @@
+group 'br.com.docker'
+version '1.0-SNAPSHOT'
+
+
+ext {
+    vertxVersion = "3.2.1"
+    logbackVersion = "1.1.3"
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:1.2.2"
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+shadowJar {
+    classifier = 'fat'
+    baseName = 'vertx-tutorial'
+
+    manifest {
+        attributes 'Main-Class': 'io.vertx.core.Starter'
+        attributes 'Main-Verticle': 'com.equinix.tutorial.ApplicationVerticle'
+    }
+    mergeServiceFiles {
+        include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
+    }
+}
+
+dependencies {
+    compile 'com.kohlschutter.junixsocket:junixsocket-common:2.0.4'
+    compile "io.vertx:vertx-core:$vertxVersion"
+    compile "io.vertx:vertx-web:$vertxVersion"
+    compile "io.vertx:vertx-lang-groovy:$vertxVersion"
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile "ch.qos.logback:logback-classic:$logbackVersion"
+}
+
+processResources {
+    from 'src/main/groovy'
+}
